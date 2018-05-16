@@ -1,0 +1,20 @@
+Creating a user for Telnet and SSH login on switch and Router
+R1 # config t
+R1 (config) # Enable password cisco
+R1 (config) # username gaju password cisco
+R1 (config) # username gaju privilege 15
+R1 (config) # ip domain-name @ciscossh.com
+R1 (config) # crypto key generate rsa
+R1 (configt) # line vty 0 4
+R1 (config-line) # login local
+R1 (config-line) # transport input all
+Go to the interface give ip address 
+R1 (config) # int fa 0/0
+R1 (config-if) # ip address 192.168.122.72 255.255.255.0
+R1 (config-if) # no shut
+
+Verification command for ssh user
+R1 # show run | i user
+
+Go to the connected device and give following command 
+root@NetworkAutomation-1:~# ssh gaju@192.168.122.72
