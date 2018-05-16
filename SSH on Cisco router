@@ -3,11 +3,14 @@ R1 # config t
 R1 (config) # Enable password cisco
 R1 (config) # username gaju password cisco
 R1 (config) # username gaju privilege 15
-R1 (config) # ip domain-name @ciscossh.com
-R1 (config) # crypto key generate rsa
 R1 (configt) # line vty 0 4
 R1 (config-line) # login local
 R1 (config-line) # transport input all
+
+R1 (config) # ip domain-name @ciscossh.com
+R1 (config) # crypto key generate rsa
+rsa key : 1024
+
 Go to the interface give ip address 
 R1 (config) # int fa 0/0
 R1 (config-if) # ip address 192.168.122.72 255.255.255.0
